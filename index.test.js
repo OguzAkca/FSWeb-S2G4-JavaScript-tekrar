@@ -105,7 +105,7 @@ describe('CemberinAlani görevi', (r)=>{
         }
 
     }
-    // 500'den küçükler
+    // 500'den küçükler sayılar
     const besyuzdenKucukler = (sayi) => {
         let kucukOlanlar = [];
         for(let i = 0; i< sayi.length; i++){
