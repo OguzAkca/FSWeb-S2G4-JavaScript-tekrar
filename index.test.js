@@ -119,9 +119,10 @@ describe('CemberinAlani görevi', (r)=>{
     const duzgunSira = (sayi) => {
         sayi.sort((a,b) => a-b);
     }
-    // tekrar eden
+    // tekrar eden sayılar neler?
 
     const tekrar = (sayi) => {
+        
         const duplicates = sayi.filter((num, index) => sayi.indexOf(num) !== index);
     }
 };
