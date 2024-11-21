@@ -94,7 +94,7 @@ describe('CemberinAlani görevi', (r)=>{
         }
       }
 
-    // 3 e bölünenlerin toplamı
+    // 3 e bölünenlerin toplamı nedir?
 
     const uceToplam = (sayi) => {
         let tamlar = 0;
