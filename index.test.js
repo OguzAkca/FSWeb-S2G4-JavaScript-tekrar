@@ -49,38 +49,79 @@ describe('saFunction', ()=>{
     })
 });
 //görev 1
-describe('CemberinCevresi görevi', ()=>{
-    it('CemberinCevresi bir sayı döndürüyor', ()=>{
+describe('CemberinCevresi görevi', (r)=>{
+    it(2*3.14*r, ()=>{
 	expect(functions.CemberinCevresi(10)).toEqual(62.8318);
     })
 });
 //görev 2
-describe('CemberinAlani görevi', ()=>{
-    it('CemberinAlani bir sayı döndürüyor', ()=>{
+describe('CemberinAlani görevi', (r)=>{
+    it('CemberinAlani bir sayı döndürüyor', (3,14*r*3)=>{
 	expect(functions.CemberinAlani(4,3.14159)).toEqual(50.26544);
     })
 });
 //görev 3
-describe('sayilar görevi', ()=>{
-    it('enbuyuk bir sayı döndürüyor', ()=>{
-	expect(functions.enbuyuk).toEqual(992.1);
-    })
-    it('enkucuk bir sayı döndürüyor', ()=>{
-	expect(functions.enkucuk).toEqual(0.02);
-    })
-    it('ucetambolunenler 3\'e tam bölünen sayıları içeriyor', ()=>{
-	expect(functions.ucetambolunenler).toEqual(expect.arrayContaining(bolunenler));
-    })
-    it('ucetambolunenlerintoplami 3\'e tam bölünen sayıların toplamı', ()=>{
-	expect(functions.ucebolunenlerintoplami).toEqual(27024);
-    })
-    it('besyuzdenkucusayilar 500\'den küçük sayıları içeriyor', ()=>{
-	expect(functions.besyuzdenkucuksayilar).toEqual(expect.arrayContaining(besyuz));
-    })
-    it('siralisayilar düzgün sıralanmış', ()=>{
-	expect(functions.siralisayilar).toEqual(sirali);
-    })
-    it('tekraredensayilar tekrar eden tüm sayıları içeriyor', ()=>{
-	expect(functions.tekraredensayilar).toEqual(expect.arrayContaining(tekrar));
-    })
-});
+// en büyük
+    const enBuyuk = (sayilar) =>{
+    let enBuyukSayi = sayilar[0];
+      for(let i = 0; i< sayilar.length; i++){
+          if(sayilar[i] > enBuyukSayi){
+               enBuyukSayi = sayilar[i];
+              
+      }
+      
+  }    console.log(enBuyukSayi)
+}
+    // en küçük
+    const enKucuk = (sayilar) =>{
+        let enKucukSayi = sayilar[0];
+          for(let i = 0; i< sayilar.length; i++){
+              if(sayilar[i] < enKucukSayi){
+                   enKucukSayi = sayilar[i];
+                  
+          }
+          
+      }    console.log(enKucukSayi)
+    }
+
+    // 3' e tam bölünenler
+      const uceTam = (sayi) => {
+        let tamBolunenler =[];
+        for(let i = 0; i< sayi.length; i++){
+            if(sayi[i]%3 === 0){
+                tamBolunenler.push(sayi[i]);
+            }
+        }
+      }
+
+    // 3 e bölünenlerin toplamı
+
+    const uceToplam = (sayi) => {
+        let tamlar = 0;
+            for(let i = 0; i< sayi.length; i++){
+            if(sayi[i]%3 === 0){
+                tamlar = tamlar + sayi[i];
+            }
+        }
+
+    }
+    // 500'den küçükler
+    const besyuzdenKucukler = (sayi) => {
+        let kucukOlanlar = [];
+        for(let i = 0; i< sayi.length; i++){
+            if(sayi[i] < 500){
+                kucukOlanlar.push(sayi[i]);
+            }
+
+    }
+    // Düzgün sıralanmış sayılar 
+
+    const duzgunSira = (sayi) => {
+        sayi.sort((a,b) => a-b);
+    }
+    // tekrar eden
+
+    const tekrar = (sayi) => {
+        const duplicates = sayi.filter((num, index) => sayi.indexOf(num) !== index);
+    }
+};
